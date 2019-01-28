@@ -15,14 +15,32 @@
 @property (assign, nonatomic) CGFloat blue;
 
 @property (strong, nonatomic) NSString *rgbColorData;
+@property (strong, nonatomic) EGBColorRow *colorRow;
+@property (strong, nonatomic) NSMutableArray *arrayOfColoredRows;
 
 @end
+
+static const NSInteger amountOfRows = 1000;
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    
+    self.arrayOfColoredRows = [NSMutableArray array];
+    
+    for (int i = 0; i < amountOfRows; i++) {
+        
+        self.colorRow = [[EGBColorRow alloc] init];
+        
+        self.colorRow.color = [self randomColor];
+        self.colorRow.name = [NSString stringWithFormat:@"RGB(%1.0f, %1.0f, %1.0f)", self.red, self.green, self.blue];
+        
+        
+        [self.arrayOfColoredRows insertObject:self.colorRow atIndex:i];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -38,7 +56,14 @@
     
     NSLog(@"numberOfRowsInSection %ld", (long)section);
     
-    return 1000;
+    return amountOfRows;
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+
+    NSString *myColoredRows = @"myColoredRows";
+
+    return myColoredRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,13 +84,8 @@
         NSLog(@"Cell reused!");
     }
     
-    NSString *rgbText = [NSString stringWithFormat:@"RGB(%1.0f, %1.0f, %1.0f)", self.red, self.green, self.blue];
-    
-    cell.textLabel.text = rgbText;
-    
-    UIColor *rgbRandomColor = [self randomColor];
-    
-    cell.backgroundColor = rgbRandomColor;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.arrayOfColoredRows[indexPath.row] name]];
+    cell.backgroundColor = (__bridge UIColor * _Nullable)([self.arrayOfColoredRows[indexPath.row] color]);
     
     return cell;
 }

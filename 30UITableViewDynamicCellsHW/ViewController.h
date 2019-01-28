@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EGBColorRow.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource>
 

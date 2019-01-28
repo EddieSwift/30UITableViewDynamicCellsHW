@@ -13,6 +13,7 @@
 		2C50CA0921FDA033003EE045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C50CA0821FDA033003EE045 /* Assets.xcassets */; };
 		2C50CA0C21FDA033003EE045 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C50CA0A21FDA033003EE045 /* LaunchScreen.storyboard */; };
 		2C50CA0F21FDA033003EE045 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C50CA0E21FDA033003EE045 /* main.m */; };
+		2C50CA1721FF7DA0003EE045 /* EGBColorRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C50CA1621FF7DA0003EE045 /* EGBColorRow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		2C50CA0B21FDA033003EE045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C50CA0D21FDA033003EE045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C50CA0E21FDA033003EE045 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C50CA1521FF7DA0003EE045 /* EGBColorRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGBColorRow.h; sourceTree = "<group>"; };
+		2C50CA1621FF7DA0003EE045 /* EGBColorRow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGBColorRow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		2C50C9FE21FDA032003EE045 /* 30UITableViewDynamicCellsHW */ = {
 			isa = PBXGroup;
 			children = (
+				2C50CA1521FF7DA0003EE045 /* EGBColorRow.h */,
+				2C50CA1621FF7DA0003EE045 /* EGBColorRow.m */,
 				2C50C9FF21FDA032003EE045 /* AppDelegate.h */,
 				2C50CA0021FDA032003EE045 /* AppDelegate.m */,
 				2C50CA0221FDA032003EE045 /* ViewController.h */,
@@ -142,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C50CA0421FDA032003EE045 /* ViewController.m in Sources */,
+				2C50CA1721FF7DA0003EE045 /* EGBColorRow.m in Sources */,
 				2C50CA0F21FDA033003EE045 /* main.m in Sources */,
 				2C50CA0121FDA032003EE045 /* AppDelegate.m in Sources */,
 			);
